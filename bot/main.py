@@ -37,8 +37,7 @@ def image(message):
     f_path = bot.get_file(fileID).file_path
     downloaded_file = bot.download_file(f_path)
 
-    filename_data = f_path.split('.')
-    new_filename = f'bot_images/{filename_data[-2]}.{filename_data[-1]}'
+    new_filename = f'bot_images/{f_path}.jpg'
 
     with open(new_filename, 'wb') as new_file:
         new_file.write(downloaded_file)
